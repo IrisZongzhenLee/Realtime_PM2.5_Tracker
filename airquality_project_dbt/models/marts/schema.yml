@@ -1,0 +1,46 @@
+# models/marts/schema.yml
+
+version: 2
+
+models:
+  - name: fact_airquality_sensor_latest
+    description: "Fact table combining latest PM2.5 readings with sensor metadata at the sensor level."
+    columns:
+      - name: sensors_id
+        description: "Sensor identifier."
+      - name: locations_id
+        description: "Location identifier."
+      - name: location_name
+        description: "Human-readable location name."
+      - name: city
+        description: "City / locality of the sensor."
+      - name: datetime_local
+        description: "Local timestamp of the latest PM2.5 reading."
+      - name: pm25_value
+        description: "Latest PM2.5 measurement (µg/m³) used for analysis."
+      - name: pm25_category
+        description: "Category bucket based on PM2.5 level (e.g., within_guideline, elevated, high)."
+      - name: is_above_who_limit
+        description: "True if PM2.5 exceeds WHO 24-hour guideline."
+      - name: latitude
+        description: "Latitude of the sensor/location."
+      - name: longitude
+        description: "Longitude of the sensor/location."
+
+  - name: fact_airquality_city_summary
+    description: "Aggregated fact table summarizing PM2.5 metrics at the city level."
+    columns:
+      - name: city
+        description: "City / locality."
+      - name: num_sensors
+        description: "Number of sensors contributing to the city-level metrics."
+      - name: avg_pm25_value
+        description: "Average PM2.5 across sensors in the city."
+      - name: max_pm25_value
+        description: "Maximum PM2.5 measured among sensors in the city."
+      - name: min_pm25_value
+        description: "Minimum PM2.5 measured among sensors in the city."
+      - name: sensors_above_who
+        description: "Count of sensors in the city above the WHO guideline."
+      - name: sensors_within_who
+        description: "Count of sensors in the city within or below the WHO guideline."

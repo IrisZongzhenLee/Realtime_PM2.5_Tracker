@@ -1,0 +1,14 @@
+airquality_project:
+  outputs:
+    dev:
+      account: azb79167
+      database: MLDS430
+      private_key_passphrase: null
+      private_key_path: /Users/lizongzhen/rsa_key.pem
+      role: TRAINING_ROLE
+      schema: AIRQUALITY_DBT_FINCH
+      threads: 4
+      type: snowflake
+      user: FINCH
+      warehouse: TRAINING_WH
+  target: dev

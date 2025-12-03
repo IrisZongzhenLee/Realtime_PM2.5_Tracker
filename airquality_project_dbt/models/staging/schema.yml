@@ -1,0 +1,45 @@
+# models/staging/schema.yml
+models:
+  - name: stg_airquality_latest_pm25
+    description: "Staging view for latest PM2.5 readings from OpenAQ (one row per sensor reading)."
+    columns:
+      - name: sensors_id
+        description: "Unique identifier for the sensor in OpenAQ."
+        tests:
+          - not_null
+      - name: locations_id
+        description: "Location identifier associated with the sensor."
+      - name: datetime_utc
+        description: "UTC timestamp of the latest PM2.5 reading."
+      - name: datetime_local
+        description: "Local timestamp of the latest PM2.5 reading."
+      - name: pm25_uvalue
+        description: "Latest PM2.5 concentration measured by the sensor (µg/m³)."
+        tests:
+          - not_null
+      - name: latitude
+        description: "Latitude of the sensor or location."
+      - name: longitude
+        description: "Longitude of the sensor or location."
+
+  - name: stg_airquality_us_sensor_metadata
+    description: "Staging view for PM2.5 sensor and location metadata for US sensors from OpenAQ."
+    columns:
+      - name: sensors_id
+        description: "Unique identifier for the sensor in OpenAQ."
+        tests:
+          - not_null
+      - name: parameter_name
+        description: "Name of the measured parameter (e.g., PM2.5)."
+      - name: parameter_units
+        description: "Units of the parameter (e.g., µg/m³)."
+      - name: locations_id
+        description: "Location identifier associated with the sensor."
+      - name: location_name
+        description: "Human-readable name of the location."
+      - name: city
+        description: "City / locality associated with the location."
+      - name: latitude
+        description: "Latitude of the location."
+      - name: longitude
+        description: "Longitude of the location."

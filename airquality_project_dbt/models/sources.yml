@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: AIRQUALITY_SDK
+    database: FIVETRAN_DATABASE
+    schema: AIRQUALITY_SDK
+    tables:
+      - name: AIRQUALITY_LATEST_PM_25
+      - name: AIRQUALITY_SENSOR_METADATA
