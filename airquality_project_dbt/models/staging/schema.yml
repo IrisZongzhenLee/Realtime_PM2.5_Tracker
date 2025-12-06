@@ -13,7 +13,7 @@ models:
         description: "UTC timestamp of the latest PM2.5 reading."
       - name: datetime_local
         description: "Local timestamp of the latest PM2.5 reading."
-      - name: pm25_uvalue
+      - name: PM25_VALUE
         description: "Latest PM2.5 concentration measured by the sensor (µg/m³)."
         tests:
           - not_null
