@@ -1,5 +1,3 @@
-# DW_Project_bcw5373
-
 # US Air Quality PM2.5 Analytics Pipeline & Dashboard
 
 This project builds an end-to-end analytics pipeline and dashboard for **real-time PM2.5 air quality in the United States**.
