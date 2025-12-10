@@ -12,7 +12,7 @@ def get_openaq(url, params=None):
     NOTE: you can move the API key to env/config later if needed.
     """
     headers = {
-        "X-API-Key": "ab80cc97826ca5b0b037902c09addcba0db583c9ef85ee52f586822794457ac6"
+        "X-API-Key": "xxxxxx"
     }
     resp = requests.get(url, headers=headers, params=params or {}, timeout=30)
     resp.raise_for_status()
